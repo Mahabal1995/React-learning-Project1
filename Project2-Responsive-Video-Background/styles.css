@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.be-good {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  margin: 10% auto;
+  width: 30%;
+  height: 30px;
+  background-color: rgba(225, 225, 225, 0.3);
+  box-shadow: 2;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.be-good p {
+    /******** to make p to the center of the div *******/
+  display: flex;
+  justify-content: center;
+}
+
+.nature-video {
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.nature-video video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .be-good {
+    height: 50px;
+  }
+}

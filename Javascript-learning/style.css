@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(34, 32, 31);
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.background {
+  background-image: url("loginbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: color-dodge;
+
+  /* ***** Positioning the div to the center of the page  ***** */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 35%;
+  height: 60%;
+  margin: 10vh auto;
+  /* ***** for Glass-effect ******* */
+  background-color: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(12px);
+  /*************/
+  box-shadow: 0 0 15px #ffffff;
+  border-radius: 2em;
+
+  /* ***** Positioning the div to the center of the page  ***** */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* ************ */
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.input-form {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.form-item {
+  display: flex;
+  margin: 10px auto;
+  border-radius: 15px;
+  align-items: center;
+  border-bottom: 1px solid rgb(82, 81, 81);
+}
+.form-item:hover {
+  border: 1px solid rgb(82, 81, 81);
+}
+
+input {
+  background: transparent;
+  width: 80%;
+  height: 2em;
+  outline: none;
+  border: none;
+  margin: auto;
+  color: #1a0e0e;
+  font-size: 17px;
+}
+
+span {
+  user-select: none;
+  margin: 5px;
+  color: rgb(29, 27, 27);
+  background: rgba(85, 81, 81, 0.637);
+  padding: 5px;
+  border-radius: 18px;
+}
+
+.login-btn {
+  width: 180px;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 8px;
+  background: rgba(223, 226, 241, 0.72);
+  border: none;
+  border-radius: 10px;
+}
+
+.login-btn:hover {
+  background: rgba(34, 88, 236, 0.678);
+}
+
+.other-options {
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+i {
+  font-size: 2rem;
+  padding: 0 0.5em;
+}
+
+i:hover {
+  color: #1a0e0e;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 200, "opsz" 40;
+}
+
+@media all and (max-width: 520px) {
+  .container,
+  .input-form {
+    width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}

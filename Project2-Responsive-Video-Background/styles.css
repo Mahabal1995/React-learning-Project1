@@ -50,6 +50,64 @@
   transform: translate(-50%, -50%);
 }
 
+
+.tool-tip{
+  /* aking the .tooltip a container for the tooltip text */
+  position: relative;
+  
+}
+
+ .tool-tip:before {
+  /* this is the magic, the data is displayed which is taken from the parent element by this line of code in the tool-tip */
+  content: attr(data-text);
+  position: absolute;
+
+  /* vertically center */
+  bottom: -50%;
+  transform: translate(5%);
+  
+  /* positioning the tool-tip to right */
+  left: 99%;
+  /* margin-left: 5px; */
+
+  /* basic styles */
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  /* hide by default */
+  display: none;
+}
+
+
+
+.tool-tip::after{
+  content:"";
+  position: absolute;
+
+  /* position tooltip correctly */
+  left: 100%;
+  margin-left:-3px ;
+
+  /* vertically center */
+  top: 20%;
+  transform: translate(-50%);
+
+  /* the arrow */
+  border: 10px solid #000;
+  border-color: transparent black transparent transparent;
+
+  display: none;
+
+}
+
+.tool-tip:hover:before, .tool-tip:hover:after{
+  display: block;
+}
+
+
 @media only screen and (max-width: 600px) {
   .be-good {
     height: 50px;

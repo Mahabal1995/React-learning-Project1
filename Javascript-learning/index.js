@@ -12,10 +12,10 @@
 //  -- to do early error checking
 //  -- to determine appropriate scope for all the variables
 
-console.log(this);
-console.log(window);
-console.log(firstname);
-var firstname = "Maha";
+// console.log(this);
+// console.log(window);
+// console.log(firstname);
+// var firstname = "Maha";
 
 // how the JS execute the code ??
 // Global execution context which is created on a stack => 1. creation phase, 2. code execution phase
@@ -34,16 +34,100 @@ var firstname = "Maha";
 //      where the variable declared with var keyword is 
 //      stored in the global memory even before execution
 
-console.log(this);
-console.log(window);
-console.log(myFunction);
-console.log(fullName);
+// console.log(this);
+// console.log(window);
+// console.log(myFunction);
+// console.log(fullName);
 
-function myFunction(){
-    console.log("this is my function");
+// function myFunction(){
+//     console.log("this is my function");
+// }
+
+// var firstName = "maha";
+// var lastName = "Shri";
+// var fullName = firstName + " " + lastName;
+// console.log(fullName);
+
+// Function Expression
+
+// console.log(myFunction); // undefined - Hoisting
+
+// var myFunction = function(){
+//     console.log("this is my function")
+// }
+
+// console.log(myFunction); //function
+
+// what happens in case of "let" and "const"
+
+// in case of let and const variables, these are uninitialized but var variable are initialized to undefined in the Global memory while creating Global Exceuting context
+// Hoisting happens even in case of let and const but because they are not uninitailze we get the error as : trying to access variable before initialization
+
+//  Temporal dead Zone - TDZ - until a variable is initialized, it is in TDZ 
+
+// Function execution context 
+// --> pushed to call stack
+// --> local memory creaction
+//      ---> has an arrya like object called - argumnets
+//      ---> local variable initialization
+// --> code execution
+//      ---> line by line code execution
+
+
+// Scope chaining 
+// JS always follows lexical scope
+
+// closures
+
+// ----> functions can return functions
+// ----> when function returns a function it will be returned 
+//        along with the local variable values of the returning functions
+//          this is known as closures
+
+// closures example1:
+// function hello(x){
+//     const a = "varA";
+//     const b = "varB";
+//     return function(){
+//         console.log(a,b,x);
+//     }
+// }
+
+// const ans = hello("arg");
+// ans();
+
+// closures example2:
+
+// function myfunction(power){
+//     return function(number){
+//         return number ** power;
+//     }
+// }
+
+// const square = myfunction(2);
+// const ans = square(3);
+// console.log(ans);
+
+// closures example3:
+
+function func(){
+    let counter = 0;
+    return function(){
+        if(counter<1){
+            console.log("Hi, you called me");
+            counter++;
+        }else{
+            console.log("Mai already call ho chuka hun!!!");
+        }
+    }
 }
 
-var firstName = "maha";
-var lastName = "Shri";
-var fullName = firstName + " " + lastName;
-console.log(fullName);
+const myfunc = func();
+myfunc();
+myfunc();
+
+// Four Different ways of linking JS file to HTML
+// 1. script tag inside head tag ---> chances of getting error is more
+// 2. script tag inside body tag at the end ---> better option
+// 3. script tag with async inside head tag ---> chances of getting error
+// 4. script tag with defer inside head tag ---> most efficient and best way

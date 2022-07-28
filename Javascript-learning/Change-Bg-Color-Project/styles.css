@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+
+    /* ************************* */
+    /* this block makes the element to be in center of the page */
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* ************************* */
+}
+
+h1{
+    background: #5e5c5c;
+    padding: 0.5em 0.5em;
+    border-radius: 10px;
+}
+
+button{
+    background: rgb(197, 191, 191);
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(203, 204, 206);
+}
